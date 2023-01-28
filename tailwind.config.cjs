@@ -2,7 +2,7 @@
 module.exports = {
   content: [
     './src/**/*.tsx',
-    './index.html'
+    './index.html',
   ],
   theme: {
     extend: {
@@ -23,6 +23,11 @@ module.exports = {
 
         blue: "#82F3FF"
       },
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif'],
+        roboto: ['Roboto', 'sans-serif'],
+        DMSans: ['DM Sans', 'sans-serif'],
+      }
     },
   },
   plugins: [],
