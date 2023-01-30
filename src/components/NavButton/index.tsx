@@ -1,14 +1,15 @@
 import { Container } from "./styles";
 
 interface BProps {
-  title: string
+  title: string;
+  to: string;
 }
 
-export function NavButton({ title }: BProps) {
-  return(
-    <Container>
+export function NavButton({ title, to }: BProps, { ...rest }) {
+  return (
+    <Container to={to} {...rest}>
       <p
-        className='lg:px-1'
+        className=' sm:py-0 sm:px-5'
       >{title}</p>
     </Container>
   );

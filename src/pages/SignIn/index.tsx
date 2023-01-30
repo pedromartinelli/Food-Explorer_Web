@@ -84,7 +84,7 @@ export function SignIn() {
               Se você não tem <br className='lg:hidden' /> uma conta, <br className='sm:hidden lg:flex' /> se registre!
             </p>
 
-            <NavButton title='Criar conta'/>
+            <NavButton title='Criar conta' to='/register'/>
           </div>
         </FormDiv>
       </div>

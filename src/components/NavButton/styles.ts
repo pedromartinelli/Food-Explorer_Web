@@ -1,6 +1,8 @@
 import tw from 'tailwind-styled-components'
 
-export const Container = tw.button`
+import { Link } from "react-router-dom";
+
+export const Container = tw(Link)`
 bg-white 
 font-poppins 
 

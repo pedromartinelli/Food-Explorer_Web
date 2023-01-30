@@ -23,8 +23,9 @@ export function SignUp() {
         </div>
 
         <FormDiv>
-          <h1 className='text-white font-poppins text-4xl'>
-            Faça o cadastro
+          <h1 className='text-white font-poppins text-4xl text-center'>
+            {/* Faça <br className='sm:hidden'/> o <br className='sm:hidden'/> cadastro */}
+            Cadastro
           </h1>
 
           <Form>
@@ -78,10 +79,10 @@ export function SignUp() {
 
           <div className='w-full flex items-center justify-between border-gray-500'>
             <p className='text-gray-400 font-poppins text-sm'>
-              Se você já tem <br className='lg:hidden' /> uma conta, <br className='sm:hidden lg:flex' /> vá para o login.
+              Se você já tem <br className='md:hidden' /> uma conta, <br className='sm:hidden md:flex' /> vá para o login.
             </p>
 
-            <NavButton title='Voltar para o login' />
+            <NavButton title='Voltar para o login' to='/'/>
           </div>
         </FormDiv>
       </div>
