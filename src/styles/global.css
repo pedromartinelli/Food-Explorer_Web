@@ -3,6 +3,7 @@
 @tailwind utilities;
 @tailwind components;
 
+/* não mudar a cor do input quando selecionar sugeridos do browser */
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
@@ -16,3 +17,9 @@ select:-webkit-autofill:focus {
   transition: background-color 5000s ease-in-out 0s;
   color: white;
 }
+
+/* mudar a cor do reveal password para branco */
+input::-ms-reveal {
+  filter: invert(90%);
+}
+
