@@ -7,13 +7,15 @@ export const Container = tw.button`
   gap-4
 
   text-white
-
   font-poppins
+  font-medium
+
   bg-red_200
   
   rounded-lg
   py-3
-  
+  px-9
+
   focus:outline-none
   focus:opacity-80
   focus:scale-105

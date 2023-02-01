@@ -8,6 +8,7 @@ import { RiArrowDropRightLine } from 'react-icons/ri'
 
 import { Container, Section, Card, CardWrapper } from './styles'
 import { Header } from '../../components/Header'
+import { Footer } from '../../components/Footer'
 import { Button } from '../../components/Button'
 import { NavButton } from '../../components/NavButton'
 
@@ -37,13 +38,15 @@ export function Home() {
                   alt=""
                 />
 
-                <h3 className='text-white font-poppins font-bold text-2xl flex items-center relative'>
-                  Torradas de Parma
-                  <RiArrowDropRightLine
-                    className='text-white absolute -right-10 top-[-2px]'
-                    size={38}
-                  />
-                </h3>
+                <Link to={'/details'} className='hover:opacity-80 hover:scale-105 focus:opacity-80 focus:scale-105 ease-in-out duration-300'>
+                  <h3 className='text-white font-poppins font-bold text-2xl flex items-center relative'>
+                    Torradas de Parma
+                    <RiArrowDropRightLine
+                      className='text-white absolute -right-10 top-[-2px]'
+                      size={38}
+                    />
+                  </h3>
+                </Link>
 
                 <p className='text-gray_300 text-sm mt-5 mb-4 w-56'>
                   Presunto de parma e rúcuça em um pão com fermentação natural.
@@ -66,13 +69,15 @@ export function Home() {
                   alt=""
                 />
 
-                <h3 className='text-white font-poppins font-bold text-2xl flex items-center relative'>
-                  Torradas de Parma
-                  <RiArrowDropRightLine
-                    className='text-white absolute -right-10 top-[-2px]'
-                    size={38}
-                  />
-                </h3>
+                <Link to={'/details'} className='hover:opacity-80 hover:scale-105 focus:opacity-80 focus:scale-105 ease-in-out duration-300'>
+                  <h3 className='text-white font-poppins font-bold text-2xl flex items-center relative'>
+                    Torradas de Parma
+                    <RiArrowDropRightLine
+                      className='text-white absolute -right-10 top-[-2px]'
+                      size={38}
+                    />
+                  </h3>
+                </Link>
 
                 <p className='text-gray_300 text-sm mt-5 mb-4 w-56'>
                   Presunto de parma e rúcuça em um pão com fermentação natural.
@@ -150,6 +155,7 @@ export function Home() {
           </Section>
         </div>
       </div>
+      <Footer />
     </Container>
   )
 }

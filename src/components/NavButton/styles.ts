@@ -8,8 +8,15 @@ export const Container = tw(Link)`
 
   rounded-lg 
 
-  p-2 sm:w-[150px] 
-  h-[60px] 
+  flex
+  text-center
+  justify-center
+  items-center
+
+  p-2 
+  w-[100px]
+  sm:w-[150px] 
+  h-[80px] 
   sm:h-auto 
 
   hover:opacity-80 

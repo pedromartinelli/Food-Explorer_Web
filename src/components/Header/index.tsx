@@ -4,15 +4,18 @@ import { BiFoodMenu } from "react-icons/bi";
 
 import { Button } from "../Button";
 import { Container, Input, InputContainer } from "./styles";
+import { Link } from 'react-router-dom';
 export function Header() {
 
   return (
     <Container>
-      <img
-        className='w-56'
-        src={logoImage}
-        alt="food explorer"
-      />
+      <Link to={'/'} className='hover:opacity-80 hover:scale-105 focus:opacity-80 focus:scale-105 ease-in-out duration-300'>
+        <img
+          className='w-56'
+          src={logoImage}
+          alt="food explorer"
+        />
+      </Link>
 
       <button className='text-white hover:opacity-80 hover:scale-105 focus:opacity-80 focus:scale-105 ease-in-out duration-300'>
         Meus favoritos
