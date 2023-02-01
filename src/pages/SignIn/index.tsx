@@ -54,7 +54,10 @@ export function SignIn() {
               />
             </InputContainer>
 
-            <Button title='Entrar' $large={true}/>
+            <Button title='Entrar' icon={''} width={'auto'}
+
+
+            />
           </Form>
 
           <div className='my-12 grid grid-cols-3 items-center w-full'>
@@ -84,7 +87,7 @@ export function SignIn() {
               Se você não tem <br className='lg:hidden' /> uma conta, <br className='sm:hidden lg:flex' /> se registre!
             </p>
 
-            <NavButton title='Criar conta' to='/register'/>
+            <NavButton title='Criar conta' to='/register' />
           </div>
         </FormDiv>
       </div>

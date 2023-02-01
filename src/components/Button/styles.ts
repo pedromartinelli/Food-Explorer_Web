@@ -1,8 +1,13 @@
 import tw from 'tailwind-styled-components'
 
 export const Container = tw.button`
+  flex
+  items-center
+  justify-center
+  gap-4
 
-text-white
+  text-white
+
   font-poppins
   bg-red_200
   
@@ -22,4 +27,5 @@ text-white
   focus:ring-offset-white
 
   ease-in-out duration-300
+
 `
