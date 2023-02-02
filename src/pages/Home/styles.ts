@@ -29,12 +29,12 @@ export const Card = tw.div`
   w-fit
   pt-14
   pb-10
-  px-10
+  px-11
 
   relative
+
 `
 
 export const CardWrapper = tw.div`
-  flex
-  flex-nowrap
+  
 `

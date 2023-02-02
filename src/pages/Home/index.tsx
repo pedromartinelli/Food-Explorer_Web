@@ -12,7 +12,11 @@ import { Footer } from '../../components/Footer'
 import { Button } from '../../components/Button'
 import { NavButton } from '../../components/NavButton'
 
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from 'react-responsive-carousel';
+
 export function Home() {
+
   return (
     <Container>
       <Header />
@@ -23,9 +27,9 @@ export function Home() {
         />
 
         <div>
-          <Section>
+          <Section >
             <h2 className='text-white font-poppins text-4xl'>Pratos principais</h2>
-            <CardWrapper>
+            <Carousel className='w-[1050px]' centerMode swipeable emulateTouch transitionTime={500} centerSlidePercentage={32} infiniteLoop showStatus={false} showIndicators={false} showThumbs={false}>
               <Card>
                 <FiHeart
                   className='absolute top-5 right-5 z-10 text-white'
@@ -33,9 +37,8 @@ export function Home() {
                 />
 
                 <img
-                  className='w-44 h-44 self-center mb-4 mt-2'
+                  className='!w-44 h-44 self-center mb-4 mt-2'
                   src={exampleFood}
-                  alt=""
                 />
 
                 <Link to={'/details'} className='hover:opacity-80 hover:scale-105 focus:opacity-80 focus:scale-105 ease-in-out duration-300'>
@@ -64,7 +67,7 @@ export function Home() {
                 />
 
                 <img
-                  className='w-44 h-44 self-center mb-4 mt-2'
+                  className='!w-44 h-44 self-center mb-4 mt-2'
                   src={exampleFood}
                   alt=""
                 />
@@ -80,78 +83,326 @@ export function Home() {
                 </Link>
 
                 <p className='text-gray_300 text-sm mt-5 mb-4 w-56'>
-                  Presunto de parma e rúcuça em um pão com fermentação natural.
+                  Presunto de parma e rúcula em um pão com fermentação natural.
                 </p>
 
                 <span className='text-blue text-3xl'>
                   R$ 25,97
                 </span>
               </Card>
-            </CardWrapper>
+              <Card>
+                <FiHeart
+                  className='absolute top-5 right-5 z-10 text-white'
+                  size={25}
+                />
+
+                <img
+                  className='!w-44 h-44 self-center mb-4 mt-2'
+                  src={exampleFood}
+                  alt=""
+                />
+
+                <Link to={'/details'} className='hover:opacity-80 hover:scale-105 focus:opacity-80 focus:scale-105 ease-in-out duration-300'>
+                  <h3 className='text-white font-poppins font-bold text-2xl flex items-center relative'>
+                    Torradas de Parma
+                    <RiArrowDropRightLine
+                      className='text-white absolute -right-10 top-[-2px]'
+                      size={38}
+                    />
+                  </h3>
+                </Link>
+
+                <p className='text-gray_300 text-sm mt-5 mb-4 w-56'>
+                  Presunto de parma e rúcula em um pão com fermentação natural.
+                </p>
+
+                <span className='text-blue text-3xl'>
+                  R$ 25,97
+                </span>
+              </Card>
+              <Card>
+                <FiHeart
+                  className='absolute top-5 right-5 z-10 text-white'
+                  size={25}
+                />
+
+                <img
+                  className='!w-44 h-44 self-center mb-4 mt-2'
+                  src={exampleFood}
+                  alt=""
+                />
+
+                <Link to={'/details'} className='hover:opacity-80 hover:scale-105 focus:opacity-80 focus:scale-105 ease-in-out duration-300'>
+                  <h3 className='text-white font-poppins font-bold text-2xl flex items-center relative'>
+                    Torradas de Parma
+                    <RiArrowDropRightLine
+                      className='text-white absolute -right-10 top-[-2px]'
+                      size={38}
+                    />
+                  </h3>
+                </Link>
+
+                <p className='text-gray_300 text-sm mt-5 mb-4 w-56'>
+                  Presunto de parma e rúcula em um pão com fermentação natural.
+                </p>
+
+                <span className='text-blue text-3xl'>
+                  R$ 25,97
+                </span>
+              </Card>
+            </Carousel>
           </Section>
 
           <Section>
             <h2 className='text-white font-poppins text-4xl'>Sobremesas</h2>
-            <Card>
-              <FiHeart
-                className='absolute top-5 right-5 z-10 text-white'
-                size={25}
-              />
-
-              <img
-                className='w-44 h-44 self-center mb-4 mt-2'
-                src={exampleFood}
-                alt=""
-              />
-
-              <h3 className='text-white font-poppins font-bold text-2xl flex items-center relative'>
-                Torradas de Parma
-                <RiArrowDropRightLine
-                  className='text-white absolute -right-10 top-[-2px]'
-                  size={38}
+            <Carousel className='w-[1050px]' centerMode swipeable emulateTouch transitionTime={500} centerSlidePercentage={32} infiniteLoop showStatus={false} showIndicators={false} showThumbs={false}>
+              <Card>
+                <FiHeart
+                  className='absolute top-5 right-5 z-10 text-white'
+                  size={25}
                 />
-              </h3>
 
-              <p className='text-gray_300 text-sm mt-5 mb-4 w-56'>
-                Presunto de parma e rúcuça em um pão com fermentação natural.
-              </p>
+                <img
+                  className='!w-44 h-44 self-center mb-4 mt-2'
+                  src={exampleFood}
+                />
 
-              <span className='text-blue text-3xl'>
-                R$ 25,97
-              </span>
-            </Card>
+                <Link to={'/details'} className='hover:opacity-80 hover:scale-105 focus:opacity-80 focus:scale-105 ease-in-out duration-300'>
+                  <h3 className='text-white font-poppins font-bold text-2xl flex items-center relative'>
+                    Torradas de Parma
+                    <RiArrowDropRightLine
+                      className='text-white absolute -right-10 top-[-2px]'
+                      size={38}
+                    />
+                  </h3>
+                </Link>
+
+                <p className='text-gray_300 text-sm mt-5 mb-4 w-56'>
+                  Presunto de parma e rúcuça em um pão com fermentação natural.
+                </p>
+
+                <span className='text-blue text-3xl'>
+                  R$ 25,97
+                </span>
+              </Card>
+
+              <Card>
+                <FiHeart
+                  className='absolute top-5 right-5 z-10 text-white'
+                  size={25}
+                />
+
+                <img
+                  className='!w-44 h-44 self-center mb-4 mt-2'
+                  src={exampleFood}
+                  alt=""
+                />
+
+                <Link to={'/details'} className='hover:opacity-80 hover:scale-105 focus:opacity-80 focus:scale-105 ease-in-out duration-300'>
+                  <h3 className='text-white font-poppins font-bold text-2xl flex items-center relative'>
+                    Torradas de Parma
+                    <RiArrowDropRightLine
+                      className='text-white absolute -right-10 top-[-2px]'
+                      size={38}
+                    />
+                  </h3>
+                </Link>
+
+                <p className='text-gray_300 text-sm mt-5 mb-4 w-56'>
+                  Presunto de parma e rúcula em um pão com fermentação natural.
+                </p>
+
+                <span className='text-blue text-3xl'>
+                  R$ 25,97
+                </span>
+              </Card>
+              <Card>
+                <FiHeart
+                  className='absolute top-5 right-5 z-10 text-white'
+                  size={25}
+                />
+
+                <img
+                  className='!w-44 h-44 self-center mb-4 mt-2'
+                  src={exampleFood}
+                  alt=""
+                />
+
+                <Link to={'/details'} className='hover:opacity-80 hover:scale-105 focus:opacity-80 focus:scale-105 ease-in-out duration-300'>
+                  <h3 className='text-white font-poppins font-bold text-2xl flex items-center relative'>
+                    Torradas de Parma
+                    <RiArrowDropRightLine
+                      className='text-white absolute -right-10 top-[-2px]'
+                      size={38}
+                    />
+                  </h3>
+                </Link>
+
+                <p className='text-gray_300 text-sm mt-5 mb-4 w-56'>
+                  Presunto de parma e rúcula em um pão com fermentação natural.
+                </p>
+
+                <span className='text-blue text-3xl'>
+                  R$ 25,97
+                </span>
+              </Card>
+              <Card>
+                <FiHeart
+                  className='absolute top-5 right-5 z-10 text-white'
+                  size={25}
+                />
+
+                <img
+                  className='!w-44 h-44 self-center mb-4 mt-2'
+                  src={exampleFood}
+                  alt=""
+                />
+
+                <Link to={'/details'} className='hover:opacity-80 hover:scale-105 focus:opacity-80 focus:scale-105 ease-in-out duration-300'>
+                  <h3 className='text-white font-poppins font-bold text-2xl flex items-center relative'>
+                    Torradas de Parma
+                    <RiArrowDropRightLine
+                      className='text-white absolute -right-10 top-[-2px]'
+                      size={38}
+                    />
+                  </h3>
+                </Link>
+
+                <p className='text-gray_300 text-sm mt-5 mb-4 w-56'>
+                  Presunto de parma e rúcula em um pão com fermentação natural.
+                </p>
+
+                <span className='text-blue text-3xl'>
+                  R$ 25,97
+                </span>
+              </Card>
+            </Carousel>
           </Section>
 
           <Section className='mb-0'>
             <h2 className='text-white font-poppins text-4xl'>Bebidas</h2>
-            <Card>
-              <FiHeart
-                className='absolute top-5 right-5 z-10 text-white'
-                size={25}
-              />
-
-              <img
-                className='w-44 h-44 self-center mb-4 mt-2'
-                src={exampleFood}
-                alt=""
-              />
-
-              <h3 className='text-white font-poppins font-bold text-2xl flex items-center relative'>
-                Torradas de Parma
-                <RiArrowDropRightLine
-                  className='text-white absolute -right-10 top-[-2px]'
-                  size={38}
+            <Carousel className='w-[1050px]' centerMode swipeable emulateTouch transitionTime={500} centerSlidePercentage={32} infiniteLoop showStatus={false} showIndicators={false} showThumbs={false}>
+              <Card>
+                <FiHeart
+                  className='absolute top-5 right-5 z-10 text-white'
+                  size={25}
                 />
-              </h3>
 
-              <p className='text-gray_300 text-sm mt-5 mb-4 w-56'>
-                Presunto de parma e rúcuça em um pão com fermentação natural.
-              </p>
+                <img
+                  className='!w-44 h-44 self-center mb-4 mt-2'
+                  src={exampleFood}
+                />
 
-              <span className='text-blue text-3xl'>
-                R$ 25,97
-              </span>
-            </Card>
+                <Link to={'/details'} className='hover:opacity-80 hover:scale-105 focus:opacity-80 focus:scale-105 ease-in-out duration-300'>
+                  <h3 className='text-white font-poppins font-bold text-2xl flex items-center relative'>
+                    Torradas de Parma
+                    <RiArrowDropRightLine
+                      className='text-white absolute -right-10 top-[-2px]'
+                      size={38}
+                    />
+                  </h3>
+                </Link>
+
+                <p className='text-gray_300 text-sm mt-5 mb-4 w-56'>
+                  Presunto de parma e rúcuça em um pão com fermentação natural.
+                </p>
+
+                <span className='text-blue text-3xl'>
+                  R$ 25,97
+                </span>
+              </Card>
+
+              <Card>
+                <FiHeart
+                  className='absolute top-5 right-5 z-10 text-white'
+                  size={25}
+                />
+
+                <img
+                  className='!w-44 h-44 self-center mb-4 mt-2'
+                  src={exampleFood}
+                  alt=""
+                />
+
+                <Link to={'/details'} className='hover:opacity-80 hover:scale-105 focus:opacity-80 focus:scale-105 ease-in-out duration-300'>
+                  <h3 className='text-white font-poppins font-bold text-2xl flex items-center relative'>
+                    Torradas de Parma
+                    <RiArrowDropRightLine
+                      className='text-white absolute -right-10 top-[-2px]'
+                      size={38}
+                    />
+                  </h3>
+                </Link>
+
+                <p className='text-gray_300 text-sm mt-5 mb-4 w-56'>
+                  Presunto de parma e rúcula em um pão com fermentação natural.
+                </p>
+
+                <span className='text-blue text-3xl'>
+                  R$ 25,97
+                </span>
+              </Card>
+              <Card>
+                <FiHeart
+                  className='absolute top-5 right-5 z-10 text-white'
+                  size={25}
+                />
+
+                <img
+                  className='!w-44 h-44 self-center mb-4 mt-2'
+                  src={exampleFood}
+                  alt=""
+                />
+
+                <Link to={'/details'} className='hover:opacity-80 hover:scale-105 focus:opacity-80 focus:scale-105 ease-in-out duration-300'>
+                  <h3 className='text-white font-poppins font-bold text-2xl flex items-center relative'>
+                    Torradas de Parma
+                    <RiArrowDropRightLine
+                      className='text-white absolute -right-10 top-[-2px]'
+                      size={38}
+                    />
+                  </h3>
+                </Link>
+
+                <p className='text-gray_300 text-sm mt-5 mb-4 w-56'>
+                  Presunto de parma e rúcula em um pão com fermentação natural.
+                </p>
+
+                <span className='text-blue text-3xl'>
+                  R$ 25,97
+                </span>
+              </Card>
+              <Card>
+                <FiHeart
+                  className='absolute top-5 right-5 z-10 text-white'
+                  size={25}
+                />
+
+                <img
+                  className='!w-44 h-44 self-center mb-4 mt-2'
+                  src={exampleFood}
+                  alt=""
+                />
+
+                <Link to={'/details'} className='hover:opacity-80 hover:scale-105 focus:opacity-80 focus:scale-105 ease-in-out duration-300'>
+                  <h3 className='text-white font-poppins font-bold text-2xl flex items-center relative'>
+                    Torradas de Parma
+                    <RiArrowDropRightLine
+                      className='text-white absolute -right-10 top-[-2px]'
+                      size={38}
+                    />
+                  </h3>
+                </Link>
+
+                <p className='text-gray_300 text-sm mt-5 mb-4 w-56'>
+                  Presunto de parma e rúcula em um pão com fermentação natural.
+                </p>
+
+                <span className='text-blue text-3xl'>
+                  R$ 25,97
+                </span>
+              </Card>
+            </Carousel>
           </Section>
         </div>
       </div>
