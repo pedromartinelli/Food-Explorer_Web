@@ -6,7 +6,6 @@ export const Container = tw.div`
   items-center
   justify-center
 
-  w-full
   gap-8
   py-7
   px-4

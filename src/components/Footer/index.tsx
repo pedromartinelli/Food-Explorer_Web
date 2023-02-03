@@ -8,9 +8,8 @@ export function Footer() {
 
   return (
     <Container>
-      <div className='flex items-center first:justify-between w-[1120px] mx-auto'>
+      <div className='flex w-[1120px] justify-between items-center '>
         <img
-          className='w-56'
           src={FooterLogo}
           alt="food explorer"
         />
