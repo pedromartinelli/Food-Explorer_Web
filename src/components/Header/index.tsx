@@ -17,9 +17,11 @@ export function Header() {
         />
       </Link>
 
-      <button className='text-white hover:opacity-80 hover:scale-105 focus:opacity-80 focus:scale-105 ease-in-out duration-300'>
-        Meus favoritos
-      </button>
+      <Link to={''}>
+        <button className='text-white hover:opacity-80 hover:scale-105 focus:opacity-80 focus:scale-105 ease-in-out duration-300'>
+          Meus favoritos
+        </button>
+      </Link>
 
       <InputContainer>
         <GoSearch
@@ -34,7 +36,9 @@ export function Header() {
         />
       </InputContainer>
 
-      <Button title='Meu pedido' icon={BiFoodMenu} width={'200px'} />
+      <Link to={'/myorder'}>
+        <Button title='Meu pedido' icon={BiFoodMenu} width={'200px'} />
+      </Link>
 
       <GoSignOut
         color='#FFF'
