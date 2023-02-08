@@ -2,14 +2,13 @@ import tw from 'tailwind-styled-components'
 
 export const Container = tw.div`
   bg-background_800
+  
   flex
-  items-center
   justify-center
 
-  gap-8
   py-7
-  px-4
 `
+  // gap-8
 
 export const InputContainer = tw.div`
   flex
@@ -17,14 +16,13 @@ export const InputContainer = tw.div`
 `
 
 export const Input = tw.input`
-  w-96
-  relative
-
   text-white
   bg-background_700
 
-  p-2
+  sm:w-96
+
   py-2
+  pr-2
   pl-14
   rounded-lg
 

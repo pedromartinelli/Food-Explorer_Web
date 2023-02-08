@@ -7,18 +7,19 @@ import { Container } from './styles'
 interface ButtonProps {
   title: string;
   icon: any;
-  width: string;
+  className: any;
+  iconClassName: any;
 }
 
-export function Button({ title, icon: Icon, width }: ButtonProps) {
+export function Button({ title, icon: Icon, className, iconClassName }: ButtonProps) {
+
 
   return (
     <Container
-      // className={`${$large ? 'w-auto' : 'w-24'}`}
-      className={`w-[${width}]`}
+      className={`${className}`}
       type='button'
     >
-      {Icon && <Icon size={25} />}
+      {Icon && <Icon className={`${iconClassName}`} size={25} />}
       {title}
     </Container>
   );

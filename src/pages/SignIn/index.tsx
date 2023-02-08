@@ -54,9 +54,11 @@ export function SignIn() {
               />
             </InputContainer>
 
-            <Button title='Entrar' icon={''} width={'auto'}
-
-
+            <Button
+              title='Entrar'
+              icon={''}
+              className={''}
+              iconClassName={''}
             />
           </Form>
 
