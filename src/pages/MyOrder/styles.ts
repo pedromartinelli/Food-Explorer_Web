@@ -20,6 +20,9 @@ export const Section = tw.div`
   w-full
   
   flex
+  flex-col  
+  lg:flex-row
+  
   gap-16
 
   mt-8

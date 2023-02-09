@@ -25,8 +25,10 @@ export function MyOrder() {
   function handlePayment() {
     setPaymentStatus('confirming')
     setPaymentToggled('')
-    setTimeout(changePaymentStatus, 10000)
+    setTimeout(changePaymentStatus, 1000)
   }
+
+  console.log(paymentStatus)
 
   return (
     <Container>
@@ -38,7 +40,7 @@ export function MyOrder() {
               Meu pedido
             </h2>
 
-            <div className='h-[480px] border-b-2 border-red-400 border-opacity-40 pt-4 pr-12 overflow-auto mb-5'>
+            <div className='h-[480px] border-red-400 border-opacity-40 pt-4 pr-12 overflow-auto mb-5'>
               <OrderCard>
                 <img
                   className='w-20'
@@ -124,11 +126,11 @@ export function MyOrder() {
               Pagamento
             </h2>
 
-            <PaymentSession className={`${paymentToggled == 'pix' ? 'rounded-tl-xl' : 'rounded-tr-xl'} ${paymentStatus == 'confirming' || paymentStatus == 'approved' ? 'rounded-t-xl' : ''}`}>
+            <PaymentSession className={`mb-10 lg:mb-auto ${paymentToggled == 'pix' ? 'rounded-tl-xl' : 'rounded-tr-xl'} ${paymentStatus == 'confirming' || paymentStatus == 'approved' ? 'rounded-t-xl' : ''}`}>
               <div className='flex '>
                 <PaymentMethod
                   className={`${paymentToggled == 'pix' ? 'bg-background_700 rounded-tl-xl' : ''} ${paymentStatus == 'confirming' || paymentStatus == 'approved' ? 'bg-background_900 rounded-tl-xl disabled' : ''}`}
-                  disabled={paymentStatus == 'confirming'}
+                  disabled={paymentStatus == 'confirming' || paymentStatus == 'approved'}
                   onClick={() => setPaymentToggled('pix')}
                 >
                   <img
@@ -140,7 +142,7 @@ export function MyOrder() {
 
                 <PaymentMethod
                   className={`${paymentToggled == 'credit' ? 'bg-background_700 rounded-tr-xl' : ''} ${paymentStatus == 'confirming' || paymentStatus == 'approved' ? 'bg-background_900 rounded-tr-xl disabled' : ''}`}
-                  disabled={paymentStatus == 'confirming'}
+                  disabled={paymentStatus == 'confirming' || paymentStatus == 'approved'}
                   onClick={() => setPaymentToggled('credit')}
                 >
                   <FiCreditCard
@@ -208,14 +210,14 @@ export function MyOrder() {
                     </Form>
                     :
                     paymentStatus == 'confirming' ?
-                      <PaymentStatus>
+                      <PaymentStatus className='text-yellow-500'>
                         <BiTime
                           size={104}
                         />
                         Aguardando pagamento no caixa
                       </PaymentStatus>
                       :
-                      <PaymentStatus>
+                      <PaymentStatus className='text-green-500'>
                         <BiCheckCircle
                           size={104}
                         />

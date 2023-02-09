@@ -7,5 +7,6 @@ export const Container = tw.div`
   justify-center
 
   py-12
+  px-10
 `
 
