@@ -86,6 +86,8 @@ export const PaymentMethod = tw.button`
   border-y-2
   border-[#152f3d]
   border-opacity-60
+
+
 `
 
 export const Form = tw.form`
@@ -94,7 +96,7 @@ export const Form = tw.form`
   flex-col
 
   font-roboto
-  text-gray-300
+  text-gray_200
 `
 
 export const Input = tw.input`
@@ -121,6 +123,20 @@ export const Input = tw.input`
   focus:ring-offset-white
 
   ease-in-out duration-300
-
 `
+export const PaymentStatus = tw.div`
+  w-full
+  flex
+  flex-col
+  items-center
+  gap-9
+
+  font-roboto
+  text-gray_300
+  text-2xl
+`
+
+
+
+
 

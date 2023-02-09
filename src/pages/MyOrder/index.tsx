@@ -5,10 +5,10 @@ import qrcode from '../../assets/qrcode.svg'
 import pix from '../../assets/pix.svg'
 
 import { Link } from 'react-router-dom'
-import { FiCreditCard } from 'react-icons/fi'
-import { RiArrowDropLeftLine } from 'react-icons/ri'
+import { FiCreditCard, } from 'react-icons/fi'
+import { BiTime, BiCheckCircle } from 'react-icons/bi'
 
-import { Container, Section, OrderList, Payment, OrderCard, PaymentMethod, Form, Input, PaymentSession } from './styles'
+import { Container, Section, OrderList, Payment, OrderCard, PaymentMethod, Form, Input, PaymentSession, PaymentStatus } from './styles'
 import { Header } from '../../components/Header'
 import { Footer } from '../../components/Footer'
 import { Button } from '../../components/Button'
@@ -16,6 +16,17 @@ import { NavButton } from '../../components/NavButton'
 
 export function MyOrder() {
   const [paymentToggled, setPaymentToggled] = useState('pix')
+  const [paymentStatus, setPaymentStatus] = useState('')
+
+  function changePaymentStatus() {
+    setPaymentStatus('approved')
+  }
+
+  function handlePayment() {
+    setPaymentStatus('confirming')
+    setPaymentToggled('')
+    setTimeout(changePaymentStatus, 10000)
+  }
 
   return (
     <Container>
@@ -113,10 +124,11 @@ export function MyOrder() {
               Pagamento
             </h2>
 
-            <PaymentSession className={`${paymentToggled == 'pix' ? 'rounded-tl-xl' : 'rounded-tr-xl'}`}>
+            <PaymentSession className={`${paymentToggled == 'pix' ? 'rounded-tl-xl' : 'rounded-tr-xl'} ${paymentStatus == 'confirming' || paymentStatus == 'approved' ? 'rounded-t-xl' : ''}`}>
               <div className='flex '>
                 <PaymentMethod
-                  className={`${paymentToggled == 'pix' ? 'bg-background_700 rounded-tl-xl' : ''}`}
+                  className={`${paymentToggled == 'pix' ? 'bg-background_700 rounded-tl-xl' : ''} ${paymentStatus == 'confirming' || paymentStatus == 'approved' ? 'bg-background_900 rounded-tl-xl disabled' : ''}`}
+                  disabled={paymentStatus == 'confirming'}
                   onClick={() => setPaymentToggled('pix')}
                 >
                   <img
@@ -127,10 +139,11 @@ export function MyOrder() {
                 </PaymentMethod>
 
                 <PaymentMethod
-                  className={`${paymentToggled == 'credit' ? 'bg-background_700 rounded-tr-xl' : ''}`}
+                  className={`${paymentToggled == 'credit' ? 'bg-background_700 rounded-tr-xl' : ''} ${paymentStatus == 'confirming' || paymentStatus == 'approved' ? 'bg-background_900 rounded-tr-xl disabled' : ''}`}
+                  disabled={paymentStatus == 'confirming'}
                   onClick={() => setPaymentToggled('credit')}
                 >
-                  <FiCreditCard 
+                  <FiCreditCard
                     size={24}
                   />
                   Crédito
@@ -138,52 +151,78 @@ export function MyOrder() {
               </div>
 
               {
-                paymentToggled == 'pix'
-                  ?
-                  <img
-                    src={qrcode}
-                    alt="qr code"
-                  />
-                  :
-                  <Form>
-
-                    <label htmlFor="cardNumber">Número do cartão</label>
-                    <Input
-                      type='number'
-                      name='cardNumber'
-                      placeholder='0000 0000 0000 0000'
+                paymentToggled == 'pix' ?
+                  <div>
+                    <img
+                      src={qrcode}
+                      alt="qr code"
                     />
-
-                    <div className='flex mt-9 mb-14'>
-                      <div>
-                        <label htmlFor="expirationDate">Data de Validade</label>
-                        <Input
-                          className='w-[168px]'
-                          type='date'
-                          name='expirationDate'
-                          placeholder='04/25'
-                        />
-                      </div>
-
-                      <div>
-                        <label htmlFor="cvc">CVC</label>
-                        <Input
-                          className='w-[168px]'
-                          type='password'
-                          name='cvc'
-                          placeholder='***'
-                        />
-                      </div>
-                    </div>
-
                     <Button
-                      title='Finalizar pagamento'
+                      title='Simular pagamento'
                       icon={''}
-                      className={''}
+                      className={'w-full mt-8'}
                       iconClassName={''}
+                      onClick={handlePayment}
                     />
-                  </Form>
+                  </div>
+                  :
+                  paymentToggled == 'credit' ?
+                    <Form>
+
+                      <label htmlFor="cardNumber">Número do cartão</label>
+                      <Input
+                        type='number'
+                        name='cardNumber'
+                        placeholder='0000 0000 0000 0000'
+                      />
+
+                      <div className='flex mt-9 mb-14'>
+                        <div>
+                          <label htmlFor="expirationDate">Data de Validade</label>
+                          <Input
+                            className='w-[168px]'
+                            type='date'
+                            name='expirationDate'
+                            placeholder='04/25'
+                          />
+                        </div>
+
+                        <div>
+                          <label htmlFor="cvc">CVC</label>
+                          <Input
+                            className='w-[168px]'
+                            type='password'
+                            name='cvc'
+                            placeholder='***'
+                          />
+                        </div>
+                      </div>
+
+                      <Button
+                        title='Finalizar pagamento'
+                        icon={''}
+                        className={''}
+                        iconClassName={''}
+                        onClick={handlePayment}
+                      />
+                    </Form>
+                    :
+                    paymentStatus == 'confirming' ?
+                      <PaymentStatus>
+                        <BiTime
+                          size={104}
+                        />
+                        Aguardando pagamento no caixa
+                      </PaymentStatus>
+                      :
+                      <PaymentStatus>
+                        <BiCheckCircle
+                          size={104}
+                        />
+                        Pagamento aprovado!
+                      </PaymentStatus>
               }
+
             </PaymentSession>
           </Payment>
         </Section>
