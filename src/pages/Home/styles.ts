@@ -5,8 +5,7 @@ export const Container = tw.div`
   m-0
   box-border
  
-  bg-background_800
-  sm:bg-background_900
+  bg-background_900
  
   min-h-screen
   

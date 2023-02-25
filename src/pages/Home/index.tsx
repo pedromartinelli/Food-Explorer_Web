@@ -22,7 +22,7 @@ export function Home() {
   return (
     <Container>
       <Header />
-      <div className='w-[1120px] ml-auto mr-auto mt-6 pr-10'>
+      {/* <div className='w-[1120px] ml-auto mr-auto mt-6 pr-10'>
         <img
           src={homeImg}
           alt="Sabores inigualáveis, sinta o cuidado do preparo com ingredientes selecionados."
@@ -350,8 +350,8 @@ export function Home() {
             </Carousel>
           </Section>
         </div>
-      </div>
-      <Footer />
+      </div> */}
+      {/* <Footer /> */}
     </Container>
   )
 }

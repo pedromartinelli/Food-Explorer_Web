@@ -29,7 +29,7 @@ module.exports = {
         poppins: ['Poppins', 'sans-serif'],
         roboto: ['Roboto', 'sans-serif'],
         DMSans: ['DM Sans', 'sans-serif'],
-      }
+      },
     },
   },
   plugins: [],

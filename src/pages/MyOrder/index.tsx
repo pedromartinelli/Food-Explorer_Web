@@ -33,14 +33,14 @@ export function MyOrder() {
   return (
     <Container>
       <Header />
-      <div className='ml-auto mr-auto mt-6 pr-10 flex-1'>
+      <div className='ml-auto mr-auto mt-6 lg:pr-10 flex-1'>
         <Section>
           <OrderList>
-            <h2 className='font-poppins font-medium text-4xl mb-8'>
+            <h2 className='font-poppins font-medium text-3xl lg:text-4xl mb-8'>
               Meu pedido
             </h2>
 
-            <div className='h-[480px] border-red-400 border-opacity-40 pt-4 pr-12 overflow-auto mb-5'>
+            <div className='h-[450px] border-red-400 border-opacity-40 pt-4 px-8 lg:pr-12 overflow-auto'>
               <OrderCard>
                 <img
                   className='w-20'
@@ -50,7 +50,31 @@ export function MyOrder() {
 
                 <div>
                   <div className='flex gap-3 items-center'>
-                    <p className='font-poppins font-medium text-xl'>
+                    <p className='font-poppins font-medium text-lg lg:text-xl'>
+                      1 x Torradas de Parma
+                    </p>
+
+                    <span className='font-roboto sm:text-base text-gray_200'>
+                      R$ 25,97
+                    </span>
+                  </div>
+
+                  <button className='text-red_100 font-roboto text-lg mt-2'>
+                    Excluir
+                  </button>
+                </div>
+
+              </OrderCard>
+              <OrderCard>
+                <img
+                  className='w-20'
+                  src={exampleFood}
+                  alt="Torradas de Parma"
+                />
+
+                <div>
+                  <div className='flex gap-3 items-center'>
+                    <p className='font-poppins font-medium text-lg lg:text-xl'>
                       1 x Torradas de Parma
                     </p>
 
@@ -74,7 +98,7 @@ export function MyOrder() {
 
                 <div>
                   <div className='flex gap-3 items-center'>
-                    <p className='font-poppins font-medium text-xl'>
+                    <p className='font-poppins font-medium text-lg lg:text-xl'>
                       1 x Torradas de Parma
                     </p>
 
@@ -98,7 +122,7 @@ export function MyOrder() {
 
                 <div>
                   <div className='flex gap-3 items-center'>
-                    <p className='font-poppins font-medium text-xl'>
+                    <p className='font-poppins font-medium text-lg lg:text-xl'>
                       1 x Torradas de Parma
                     </p>
 
@@ -113,16 +137,39 @@ export function MyOrder() {
                 </div>
 
               </OrderCard>
+              <OrderCard>
+                <img
+                  className='w-20'
+                  src={exampleFood}
+                  alt="Torradas de Parma"
+                />
 
+                <div>
+                  <div className='flex gap-3 items-center'>
+                    <p className='font-poppins font-medium text-lg lg:text-xl'>
+                      1 x Torradas de Parma
+                    </p>
+
+                    <span className='font-roboto text-base text-gray_200'>
+                      R$ 25,97
+                    </span>
+                  </div>
+
+                  <button className='text-red_100 font-roboto text-lg mt-2'>
+                    Excluir
+                  </button>
+                </div>
+
+              </OrderCard>
             </div>
 
-            <h3 className='font-poppins font-medium text-4xl'>
+            <h3 className='font-poppins font-medium text-3xl lg:text-4xl relative mt-10 lg:mt-0 lg:-bottom-20'>
               Total: R$ 103,88
             </h3>
           </OrderList>
 
           <Payment>
-            <h2 className='font-poppins font-medium text-4xl'>
+            <h2 className='font-poppins font-medium text-3xl lg:text-4xl mb-8'>
               Pagamento
             </h2>
 
@@ -154,10 +201,11 @@ export function MyOrder() {
 
               {
                 paymentToggled == 'pix' ?
-                  <div>
+                  <div className='flex flex-col items-center'>
                     <img
                       src={qrcode}
                       alt="qr code"
+                      className='w-52 lg:w-full'
                     />
                     <Button
                       title='Simular pagamento'
@@ -170,16 +218,17 @@ export function MyOrder() {
                   :
                   paymentToggled == 'credit' ?
                     <Form>
-
                       <label htmlFor="cardNumber">Número do cartão</label>
                       <Input
+                        className='w-[240px] sm:w-full'
+
                         type='number'
                         name='cardNumber'
                         placeholder='0000 0000 0000 0000'
                       />
 
-                      <div className='flex mt-9 mb-14'>
-                        <div>
+                      <div className='sm:flex sm:gap-4 mt-4 mb-10 sm:mt-9 sm:mb-14'>
+                        <div className='flex flex-col mb-4'>
                           <label htmlFor="expirationDate">Data de Validade</label>
                           <Input
                             className='w-[168px]'
@@ -189,7 +238,7 @@ export function MyOrder() {
                           />
                         </div>
 
-                        <div>
+                        <div className='flex flex-col sm:mb-4'>
                           <label htmlFor="cvc">CVC</label>
                           <Input
                             className='w-[168px]'
