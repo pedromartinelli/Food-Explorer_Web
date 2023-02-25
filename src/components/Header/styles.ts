@@ -3,12 +3,12 @@ import tw from 'tailwind-styled-components'
 export const Container = tw.div`
   bg-background_800
   
-  sm:flex
+  xl:flex
   justify-center
 
   py-7
   px-4
-  
+  sm:px-7
 `
 
 export const Menu = tw.div`
@@ -26,9 +26,7 @@ export const Menu = tw.div`
   rounded-xl 
   
   menu
-
   `
-  // sidebar
 
 export const InputContainer = tw.div`
   flex
@@ -39,7 +37,10 @@ export const Input = tw.input`
   text-white
   bg-background_700
 
-  sm:w-96
+  xs:w-80
+  sm:w-[360px]
+  lg:w-[500px]
+  xl:w-96
 
   py-2
   pr-2

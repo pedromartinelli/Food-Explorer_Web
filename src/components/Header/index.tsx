@@ -9,7 +9,6 @@ import { BiFoodMenu } from "react-icons/bi";
 import { Button } from "../Button";
 import { Container, Input, InputContainer, Menu } from "./styles";
 import { Link } from 'react-router-dom';
-import { boolean } from 'zod';
 import { useState } from 'react';
 import { RiMailVolumeFill } from 'react-icons/ri';
 
@@ -22,11 +21,19 @@ export function Header() {
 
   return (
     <Container>
-      <div className='lg:w-[1120px] flex justify-between items-center'>
-        <Link to={'/'}>
+      <div className='flex xl:hidden justify-between items-center'>
+        <Link
+          className='hover:opacity-80 hover:scale-105 focus:opacity-80 focus:scale-105 ease-in-out duration-300'
+          to={'/'}
+        >
           <img
-            className='w-8'
+            className='w-8 flex md:hidden'
             src={smallLogo}
+            alt="food explorer"
+          />
+          <img
+            className='w-44 hidden md:flex'
+            src={logo}
             alt="food explorer"
           />
         </Link>
@@ -38,13 +45,21 @@ export function Header() {
             size={22}
           />
           <Input
+            className='flex lg:hidden'
             type="text"
             name='Buscar pelo prato'
-            placeholder='Busque pratos'
+            placeholder='Busque pelos pratos'
+          />
+          <Input
+            className='hidden lg:flex'
+            type="text"
+            name='Buscar pelo prato'
+            placeholder='Busque pelas opções de pratos'
           />
         </InputContainer>
 
         <button
+          className='hover:opacity-80 hover:scale-105 focus:opacity-80 focus:scale-105 ease-in-out duration-300'
           onClick={() => setIsMenuOpen((prev) => !prev)}
         >
           {
@@ -70,9 +85,9 @@ export function Header() {
                 key={nav.id}
                 className={`font-poppins font-normal flex gap-3 text-white text-base ${i === navMenu.length - 1 ? 'mb-0' : 'mb-4'} hover:opacity-80 hover:scale-105 focus:opacity-80 focus:scale-105 ease-in-out duration-300`}
               >
-                <a href={`#{nav.id}`} className='text-gray_200'>
+                <Link to={'/myorder'} className='text-gray_200'>
                   {nav.title}
-                </a>
+                </Link>
 
                 <img
                   className={`w-5 stroke-[#7C7C8A] ${i === navMenu.length - 1 ? 'flex' : 'hidden'}`}
@@ -87,12 +102,13 @@ export function Header() {
 
           </ul>
         </Menu>
+      </div>
 
-
-        {/* <Link to={'/'} className='hover:opacity-80 hover:scale-105 focus:opacity-80 focus:scale-105 ease-in-out duration-300'>
+      <div className='lg:w-[1120px] hidden xl:flex justify-between items-center'>
+        <Link to={'/'} className='hover:opacity-80 hover:scale-105 focus:opacity-80 focus:scale-105 ease-in-out duration-300'>
           <img
             className='w-56'
-            src={logoImage}
+            src={logo}
             alt="food explorer"
           />
         </Link>
@@ -126,10 +142,11 @@ export function Header() {
         </Link>
 
         <GoSignOut
+          className='cursor-pointer hover:opacity-80 hover:scale-105 focus:opacity-80 focus:scale-105 ease-in-out duration-300'
           color='#FFF'
           size={25}
-        /> */}
+        />
       </div>
-    </Container>
+    </Container >
   );
 }

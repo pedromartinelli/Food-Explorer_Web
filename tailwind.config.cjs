@@ -30,7 +30,11 @@ module.exports = {
         roboto: ['Roboto', 'sans-serif'],
         DMSans: ['DM Sans', 'sans-serif'],
       },
+      screens: {
+        xs: "480px",
+      }
     },
+
   },
   plugins: [],
 }
