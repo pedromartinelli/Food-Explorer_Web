@@ -1,6 +1,9 @@
+import { navMenu } from '../../constants';
+import signOut from '../../assets/signOut.svg';
+
 import logo from '../../assets/logo.svg'
 import smallLogo from '../../assets/smallLogo.svg'
-import { GoSearch, GoSignOut, GoThreeBars, GoX } from "react-icons/go";
+import { GoSearch, GoSignOut, GoThreeBars, GoX, GoStar } from "react-icons/go";
 import { BiFoodMenu } from "react-icons/bi";
 
 import { Button } from "../Button";
@@ -8,9 +11,14 @@ import { Container, Input, InputContainer, Menu } from "./styles";
 import { Link } from 'react-router-dom';
 import { boolean } from 'zod';
 import { useState } from 'react';
+import { RiMailVolumeFill } from 'react-icons/ri';
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  navMenu.map((menu) => {
+    console.log(menu)
+  })
 
   return (
     <Container>
@@ -56,7 +64,28 @@ export function Header() {
         </button>
 
         <Menu className={`${isMenuOpen ? 'flex' : 'hidden'}`}>
-          
+          <ul>
+            {navMenu.map((nav, i) => (
+              <li
+                key={nav.id}
+                className={`font-poppins font-normal flex gap-3 text-white text-base ${i === navMenu.length - 1 ? 'mb-0' : 'mb-4'} hover:opacity-80 hover:scale-105 focus:opacity-80 focus:scale-105 ease-in-out duration-300`}
+              >
+                <a href={`#{nav.id}`} className='text-gray_200'>
+                  {nav.title}
+                </a>
+
+                <img
+                  className={`w-5 stroke-[#7C7C8A] ${i === navMenu.length - 1 ? 'flex' : 'hidden'}`}
+                  style={{
+                    stroke: '#7C7C8A'
+                  }}
+                  src={nav.icon}
+                  alt={nav.title}
+                />
+              </li>
+            ))}
+
+          </ul>
         </Menu>
 
 
