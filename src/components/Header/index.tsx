@@ -1,24 +1,20 @@
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+
 import { navMenu } from '../../constants';
-import signOut from '../../assets/signOut.svg';
 
 import logo from '../../assets/logo.svg'
 import smallLogo from '../../assets/smallLogo.svg'
-import { GoSearch, GoSignOut, GoThreeBars, GoX, GoStar } from "react-icons/go";
+
+import { GoSearch, GoSignOut, GoThreeBars, GoX } from "react-icons/go";
 import { BiFoodMenu } from "react-icons/bi";
 
 import { Button } from "../Button";
 import { Container, Input, InputContainer, Menu } from "./styles";
-import { Link } from 'react-router-dom';
-import { useState } from 'react';
-import { RiMailVolumeFill } from 'react-icons/ri';
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-
-  navMenu.map((menu) => {
-    console.log(menu)
-  })
-
+  
   return (
     <Container>
       <div className='flex xl:hidden justify-between items-center'>

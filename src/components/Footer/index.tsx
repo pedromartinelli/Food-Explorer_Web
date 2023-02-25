@@ -1,11 +1,8 @@
 import FooterLogo from '../../assets/footerLogo.svg'
-import { GoSearch, GoSignOut } from "react-icons/go";
-import { BiFoodMenu } from "react-icons/bi";
 
-import { Button } from "../Button";
 import { Container } from "./styles";
-export function Footer() {
 
+export function Footer() {
   return (
     <Container>
       <div className='flex flex-col gap-8 sm:flex-row w-[1120px] justify-between items-center '>
