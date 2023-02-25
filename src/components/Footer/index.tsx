@@ -8,7 +8,7 @@ export function Footer() {
 
   return (
     <Container>
-      <div className='flex w-[1120px] justify-between items-center '>
+      <div className='flex flex-col gap-8 sm:flex-row w-[1120px] justify-between items-center '>
         <img
           src={FooterLogo}
           alt="food explorer"
@@ -17,7 +17,6 @@ export function Footer() {
         <p className='text-white font-DMSans text-sm'>
           &copy; 2022 - Todos os direitos reservados.
         </p>
-
       </div>
     </Container>
   );

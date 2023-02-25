@@ -351,7 +351,7 @@ export function Home() {
           </Section>
         </div>
       </div> */}
-      {/* <Footer /> */}
+      <Footer />
     </Container>
   )
 }
