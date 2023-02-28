@@ -15,15 +15,27 @@ import { Header } from '../../components/Header'
 import { Footer } from '../../components/Footer'
 import { Button } from '../../components/Button'
 import { NavButton } from '../../components/NavButton'
+import { Arrow } from '../../components/Arrow'
 
 import { exampleFoods } from "../../constants";
 
 import { useKeenSlider } from 'keen-slider/react'
 import 'keen-slider/keen-slider.min.css'
+import { useState } from "react";
+
 
 export function Home() {
-  const [slideRef] = useKeenSlider<HTMLDivElement>({
+  const [currentSlide, setCurrentSlide] = useState(0)
+  const [loaded, setLoaded] = useState(false)
+  const [slideRef, instanceRef] = useKeenSlider<HTMLDivElement>({
 
+    initial: 0,
+    slideChanged(slider) {
+      setCurrentSlide(slider.track.details.rel)
+    },
+    created() {
+      setLoaded(true)
+    },
     breakpoints: {
       "(min-width: 640px)": {
         slides: { perView: 2, spacing: 36 },
@@ -46,7 +58,7 @@ export function Home() {
   return (
     <Container>
       <Header />
-      <div className="w-full xl:max-w-[1120px] m-auto flex flex-col items-center">
+      <div className="w-full xl:max-w-[1120px] m-auto flex flex-col items-center relative">
         <div className="pr-4">
           <img
             src={homeImgMobile}
@@ -116,6 +128,23 @@ export function Home() {
             </Card>
           ))}
         </div >
+
+        {loaded && instanceRef.current && (
+          <>
+            <Arrow
+              left
+              onClick={(e: any) =>
+                e.stopPropagation() || instanceRef.current?.prev()
+              }
+            />
+
+            <Arrow
+              onClick={(e: any) =>
+                e.stopPropagation() || instanceRef.current?.next()
+              }
+            />
+          </>
+        )}
       </div>
 
       {/* <div className='w-[1120px] ml-auto mr-auto mt-6 pr-10'>
