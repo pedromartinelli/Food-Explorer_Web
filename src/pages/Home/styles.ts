@@ -14,8 +14,14 @@ export const Section = tw.div`
   w-full
   gap-8
   
-  my-16
-  px-12
+  flex
+  flex-col
+  items-center
+
+  xl:items-start
+
+  my-6
+  xl:my-16
 `
 
 export const Card = tw.div`

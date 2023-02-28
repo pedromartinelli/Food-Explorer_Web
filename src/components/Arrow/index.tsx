@@ -11,7 +11,7 @@ export function Arrow(props: ArrowProps) {
   return (
     <svg
       onClick={props.onClick}
-      className={`arrow ${props.left ? "arrow--left" : "arrow--right"}  fill-white `}
+      className={`arrow ${props.left ? "arrow--left" : "arrow--right"}`}
       viewBox="0 0 24 24"
     >
       {props.left && (
