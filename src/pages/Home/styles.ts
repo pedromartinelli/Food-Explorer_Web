@@ -31,7 +31,6 @@ export const Card = tw.div`
   px-11
 
   relative
-
 `
 
 export const CardWrapper = tw.div`

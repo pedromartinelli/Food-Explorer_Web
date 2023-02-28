@@ -78,7 +78,7 @@ export function Header() {
           <ul>
             {navMenu.map((nav, i) => (
               <li
-                key={nav.id}
+                key={i}
                 className={`font-poppins font-normal flex gap-3 text-white text-base ${i === navMenu.length - 1 ? 'mb-0' : 'mb-4'} hover:opacity-80 hover:scale-105 focus:opacity-80 focus:scale-105 ease-in-out duration-300`}
               >
                 <Link to={'/myorder'} className='text-gray_200'>

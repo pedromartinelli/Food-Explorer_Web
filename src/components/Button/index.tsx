@@ -5,10 +5,10 @@ import { IconBaseProps } from 'react-icons';
 import { Container } from './styles'
 
 interface ButtonProps {
-  title: string;
-  icon: any;
-  className: any;
-  iconClassName: any;
+  title?: string;
+  icon?: any;
+  className?: any;
+  iconClassName?: any;
   onClick?: MouseEventHandler;
 }
 
