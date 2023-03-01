@@ -14,7 +14,6 @@ interface ButtonProps {
 
 export function Button({ title, icon: Icon, className, iconClassName, onClick }: ButtonProps) {
 
-
   return (
     <Container
       className={`${className}`}

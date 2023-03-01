@@ -50,7 +50,10 @@ export function MyOrder() {
             <div className='h-[450px] pt-4 lg:pr-12 overflow-auto w-full'>
 
               {exampleFoods.map((food, i) => (
-                <OrderCard className='flex items-center justify-between'>
+                <OrderCard 
+                key={`${food}-${i}`}
+                className='flex items-center justify-between'
+                >
                   <img
                     className='w-20'
                     src={food.image}

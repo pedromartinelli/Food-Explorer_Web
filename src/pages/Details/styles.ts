@@ -5,21 +5,24 @@ export const Container = tw.div`
   m-0
   box-border
  
-  bg-background_800
-  sm:bg-background_900
+  bg-background_900
  
   min-h-screen
+
+  flex
+  flex-col
 `
 export const Section = tw.div`
   w-full
   
-  flex
   gap-11
-
+  
+  flex
   items-center
+  flex-col 
+  md:flex-row
   
   mt-10
-  mb-16
 `
 
 export const FoodDetails = tw.div`  
@@ -27,7 +30,9 @@ export const FoodDetails = tw.div`
  
   flex
   flex-col
-  text-start
+
+  text-center
+  md:text-start
 `
 
 export const Ingredients = tw.div`
