@@ -186,7 +186,7 @@ export function MyOrder() {
                         <BiTime
                           size={104}
                         />
-                        Aguardando pagamento no caixa
+                        Aguardando pagamento <br /> no caixa
                       </PaymentStatus>
                       :
                       <PaymentStatus className='text-green-500'>

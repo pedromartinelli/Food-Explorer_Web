@@ -178,6 +178,8 @@ export const PaymentStatus = tw.div`
   items-center
   gap-9
 
+  text-center
+
   font-roboto
   text-gray_300
   text-2xl
