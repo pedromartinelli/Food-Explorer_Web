@@ -28,8 +28,8 @@ export const Section = tw.div`
 
   sm:gap-[150px]
   `
-  // gap-20
-  // xl:gap-10
+// gap-20
+// xl:gap-10
 
 export const OrderList = tw.div`  
   w-full
@@ -70,19 +70,8 @@ text-white
   mt-14
   sm:mt-0
 
-  `
-  // flex
-  // flex-col
-  // items-center
-  // lg:items-start
-  // gap-10
-///////////
-  // flex 
-  // flex-col 
-  // items-center 
-  
-  // gap-14 
-  // pb-12 
+`
+
 export const PaymentSession = tw.div`
   flex
   flex-col
@@ -95,7 +84,8 @@ export const PaymentSession = tw.div`
   border-x 
   border-[#152f3d] 
   first-letter:border-opacity-60 
-  `
+`
+
 export const PaymentMethod = tw.button`
   text-white
   text-base
@@ -119,34 +109,18 @@ export const PaymentMethod = tw.button`
   border-y-2
   border-[#152f3d]
   border-opacity-60
-  `
-  // flex 
-  // items-center
-  // justify-center
-  // gap-4
-  
-  // w-[200px]
-  // lg:w-[200px]
-  // xl:w-[256px]
-  // py-8
+`
 
 
-  export const Form = tw.form`
-
+export const Form = tw.form`
   sm:w-[348px]
   flex
   flex-col
   
   font-roboto
   text-gray_200
-  `
+`
 
-
-  // w-full
-  // h-12
-  // mt-2
-  // p-2
-  // pl-2
 export const Input = tw.input`
   
   text-white

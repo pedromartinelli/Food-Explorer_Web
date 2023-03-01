@@ -28,7 +28,14 @@ export function MyOrder() {
     setTimeout(changePaymentStatus, 1000)
   }
 
-  console.log(paymentStatus)
+  let totalPrice = (exampleFoods.reduce(function (acc, obj) {
+    return acc + obj.price
+  }, 0)) / 100
+
+  let formatedTotalPrice = totalPrice.toLocaleString('pt-br', {
+    style: 'currency',
+    currency: 'BRL',
+  })
 
   return (
     <Container>
@@ -83,11 +90,11 @@ export function MyOrder() {
                 </OrderCard>
               ))}
 
-              
+
             </div>
 
             <h3 className='font-poppins font-medium text-3xl lg:text-4xl relative mt-10 lg:mt-0 lg:-bottom-20'>
-              Total: R$ 103,88
+              Total: {formatedTotalPrice}
             </h3>
           </OrderList>
 
