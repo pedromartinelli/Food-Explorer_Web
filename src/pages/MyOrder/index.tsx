@@ -9,10 +9,10 @@ import { FiCreditCard, } from 'react-icons/fi'
 import { BiTime, BiCheckCircle } from 'react-icons/bi'
 
 import { Container, Section, OrderList, Payment, OrderCard, PaymentMethod, Form, Input, PaymentSession, PaymentStatus } from './styles'
-import { Header } from '../../components/Header'
-import { Footer } from '../../components/Footer'
-import { Button } from '../../components/Button'
-import { NavButton } from '../../components/NavButton'
+
+import { Header, Footer, Button } from '../../components'
+
+import { exampleFoods } from '../../constants'
 
 export function MyOrder() {
   const [paymentToggled, setPaymentToggled] = useState('pix')
@@ -34,133 +34,56 @@ export function MyOrder() {
     <Container>
       <Header />
       <div className='ml-auto mr-auto mt-6 lg:pr-10 flex-1'>
-        <Section>
-          <OrderList>
+        <Section >
+          <OrderList >
             <h2 className='font-poppins font-medium text-3xl lg:text-4xl mb-8'>
               Meu pedido
             </h2>
 
-            <div className='h-[450px] border-red-400 border-opacity-40 pt-4 px-8 lg:pr-12 overflow-auto'>
-              <OrderCard>
-                <img
-                  className='w-20'
-                  src={exampleFood}
-                  alt="Torradas de Parma"
-                />
+            <div className='h-[450px] pt-4 lg:pr-12 overflow-auto w-full'>
 
-                <div>
-                  <div className='flex gap-3 items-center'>
-                    <p className='font-poppins font-medium text-lg lg:text-xl'>
-                      1 x Torradas de Parma
-                    </p>
+              {exampleFoods.map((food, i) => (
+                <OrderCard className='flex items-center justify-between'>
+                  <img
+                    className='w-20'
+                    src={food.image}
+                    alt="Torradas de Parma"
+                  />
 
-                    <span className='font-roboto sm:text-base text-gray_200'>
-                      R$ 25,97
-                    </span>
+                  <div className='w-full'>
+                    <div className='w-full flex items-center justify-between gap-3'>
+                      <div className='flex items-center justify-center gap-3'>
+                        <span className='tracking-[3px] font-poppins font-medium text-lg lg:text-xl'>1x</span>
+                        <span className='font-poppins font-medium text-lg lg:text-xl w-[100px] sm:w-full'>{food.title}</span>
+                      </div>
+                      <span className='font-roboto sm:text-base text-gray_200'>R$ {food.price / 100}</span>
+                    </div>
+
+                    <button className='text-red_100 font-roboto text-lg mt-2'>
+                      Excluir
+                    </button>
                   </div>
 
-                  <button className='text-red_100 font-roboto text-lg mt-2'>
-                    Excluir
-                  </button>
-                </div>
+                  {/* <div className='border w-full'>
+                    <div className='flex gap-3 items-center px-8'>
+                      <p className='font-poppins font-medium text-lg lg:text-xl'>
+                        1 x {food.title}
+                      </p>
 
-              </OrderCard>
-              <OrderCard>
-                <img
-                  className='w-20'
-                  src={exampleFood}
-                  alt="Torradas de Parma"
-                />
+                      <span className='font-roboto border sm:text-base text-gray_200'>
+                        R$ {food.price / 100}
+                      </span>
+                    </div>
 
-                <div>
-                  <div className='flex gap-3 items-center'>
-                    <p className='font-poppins font-medium text-lg lg:text-xl'>
-                      1 x Torradas de Parma
-                    </p>
+                    <button className='text-red_100 font-roboto text-lg mt-2'>
+                      Excluir
+                    </button>
+                  </div> */}
 
-                    <span className='font-roboto text-base text-gray_200'>
-                      R$ 25,97
-                    </span>
-                  </div>
+                </OrderCard>
+              ))}
 
-                  <button className='text-red_100 font-roboto text-lg mt-2'>
-                    Excluir
-                  </button>
-                </div>
-
-              </OrderCard>
-              <OrderCard>
-                <img
-                  className='w-20'
-                  src={exampleFood}
-                  alt="Torradas de Parma"
-                />
-
-                <div>
-                  <div className='flex gap-3 items-center'>
-                    <p className='font-poppins font-medium text-lg lg:text-xl'>
-                      1 x Torradas de Parma
-                    </p>
-
-                    <span className='font-roboto text-base text-gray_200'>
-                      R$ 25,97
-                    </span>
-                  </div>
-
-                  <button className='text-red_100 font-roboto text-lg mt-2'>
-                    Excluir
-                  </button>
-                </div>
-
-              </OrderCard>
-              <OrderCard>
-                <img
-                  className='w-20'
-                  src={exampleFood}
-                  alt="Torradas de Parma"
-                />
-
-                <div>
-                  <div className='flex gap-3 items-center'>
-                    <p className='font-poppins font-medium text-lg lg:text-xl'>
-                      1 x Torradas de Parma
-                    </p>
-
-                    <span className='font-roboto text-base text-gray_200'>
-                      R$ 25,97
-                    </span>
-                  </div>
-
-                  <button className='text-red_100 font-roboto text-lg mt-2'>
-                    Excluir
-                  </button>
-                </div>
-
-              </OrderCard>
-              <OrderCard>
-                <img
-                  className='w-20'
-                  src={exampleFood}
-                  alt="Torradas de Parma"
-                />
-
-                <div>
-                  <div className='flex gap-3 items-center'>
-                    <p className='font-poppins font-medium text-lg lg:text-xl'>
-                      1 x Torradas de Parma
-                    </p>
-
-                    <span className='font-roboto text-base text-gray_200'>
-                      R$ 25,97
-                    </span>
-                  </div>
-
-                  <button className='text-red_100 font-roboto text-lg mt-2'>
-                    Excluir
-                  </button>
-                </div>
-
-              </OrderCard>
+              
             </div>
 
             <h3 className='font-poppins font-medium text-3xl lg:text-4xl relative mt-10 lg:mt-0 lg:-bottom-20'>

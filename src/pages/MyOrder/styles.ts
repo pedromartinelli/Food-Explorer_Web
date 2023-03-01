@@ -16,14 +16,12 @@ export const Container = tw.div`
   `
 // max-w-screen
 export const Section = tw.div`
-  w-[340px]
   sm:w-full
   
   flex
   flex-col  
   lg:flex-row
 
-  ml-5
   xl:ml-0
   mt-8
   lg:px-10
@@ -34,8 +32,7 @@ export const Section = tw.div`
   // xl:gap-10
 
 export const OrderList = tw.div`  
-  w-[340px]
-  sm:w-[400px]
+  w-full
   lg:w-[400px]
   xl:w-[550px]
   
