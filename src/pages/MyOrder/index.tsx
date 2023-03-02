@@ -40,19 +40,19 @@ export function MyOrder() {
   return (
     <Container>
       <Header />
-      <div className='ml-auto mr-auto mt-6 lg:pr-10 flex-1'>
-        <Section >
-          <OrderList >
+      <div className='mx-auto mt-6 flex-1'> 
+        <Section>
+          <OrderList className=''>
             <h2 className='font-poppins font-medium text-3xl lg:text-4xl mb-8'>
               Meu pedido
             </h2>
 
-            <div className='h-[450px] pt-4 lg:pr-12 overflow-auto w-full'>
+            <div className='h-[450px] pt-4 overflow-auto w-full pr-4'>
 
               {exampleFoods.map((food, i) => (
-                <OrderCard 
-                key={`${food}-${i}`}
-                className='flex items-center justify-between'
+                <OrderCard
+                  key={`${food}-${i}`}
+                  className='flex items-center justify-between'
                 >
                   <img
                     className='w-20'
@@ -93,10 +93,9 @@ export function MyOrder() {
                 </OrderCard>
               ))}
 
-
             </div>
 
-            <h3 className='font-poppins font-medium text-3xl lg:text-4xl relative mt-10 lg:mt-0 lg:-bottom-20'>
+            <h3 className='font-poppins font-medium text-3xl lg:text-4xl relative mt-10 lg:mt-20'>
               Total: {formatedTotalPrice}
             </h3>
           </OrderList>
@@ -107,7 +106,7 @@ export function MyOrder() {
             </h2>
 
             <PaymentSession className={`mb-10 lg:mb-auto ${paymentToggled == 'pix' ? 'rounded-tl-xl' : 'rounded-tr-xl'} ${paymentStatus == 'confirming' || paymentStatus == 'approved' ? 'rounded-t-xl' : ''}`}>
-              <div className='flex '>
+              <div className='flex'>
                 <PaymentMethod
                   className={`${paymentToggled == 'pix' ? 'bg-background_700 rounded-tl-xl' : ''} ${paymentStatus == 'confirming' || paymentStatus == 'approved' ? 'bg-background_900 rounded-tl-xl disabled' : ''}`}
                   disabled={paymentStatus == 'confirming' || paymentStatus == 'approved'}
@@ -134,7 +133,7 @@ export function MyOrder() {
 
               {
                 paymentToggled == 'pix' ?
-                  <div className='flex flex-col items-center'>
+                  <div className='flex flex-col items-center mt-2'>
                     <img
                       src={qrcode}
                       alt="qr code"
@@ -143,7 +142,7 @@ export function MyOrder() {
                     <Button
                       title='Simular pagamento'
                       icon={''}
-                      className={'w-full mt-8'}
+                      className={'w-full mt-[100px] lg:mt-8'}
                       iconClassName={''}
                       onClick={handlePayment}
                     />
@@ -153,18 +152,18 @@ export function MyOrder() {
                     <Form>
                       <label htmlFor="cardNumber">Número do cartão</label>
                       <Input
-                        className='w-[240px] sm:w-full'
+                        className=''
 
                         type='number'
                         name='cardNumber'
                         placeholder='0000 0000 0000 0000'
                       />
 
-                      <div className='sm:flex sm:gap-4 mt-4 mb-10 sm:mt-9 sm:mb-14'>
+                      <div className='flex flex-col sm:flex-row sm:gap-4 mt-4 mb-10 sm:mt-9 sm:mb-14'>
                         <div className='flex flex-col mb-4'>
                           <label htmlFor="expirationDate">Data de Validade</label>
                           <Input
-                            className='w-[168px]'
+                            className='w-[50%] sm:w-full'
                             type='date'
                             name='expirationDate'
                             placeholder='04/25'
@@ -174,7 +173,7 @@ export function MyOrder() {
                         <div className='flex flex-col sm:mb-4'>
                           <label htmlFor="cvc">CVC</label>
                           <Input
-                            className='w-[168px]'
+                            className='w-[50%] sm:w-full'
                             type='password'
                             name='cvc'
                             placeholder='***'

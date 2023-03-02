@@ -47,4 +47,18 @@ export const exampleFoods = [
     price: 1999,
     image: saladaMolla,
   },
+  {
+    id: 4,
+    title: 'Salada Molla',
+    description: 'Tomates, coentro, pepino, cebola roxa. Frescos e temperados.',
+    price: 1999,
+    image: saladaMolla,
+  },
+  {
+    id: 4,
+    title: 'Salada Molla',
+    description: 'Tomates, coentro, pepino, cebola roxa. Frescos e temperados.',
+    price: 1999,
+    image: saladaMolla,
+  },
 ]

@@ -14,26 +14,26 @@ export const Container = tw.div`
   flex-col
 
   `
-// max-w-screen
+
 export const Section = tw.div`
   sm:w-full
   
-  flex
-  flex-col  
-  lg:flex-row
+  grid
+  grid-cols-1
+  grid-rows-2
+  lg:grid-cols-2
+  lg:grid-rows-1
+
 
   xl:ml-0
   mt-8
-  lg:px-10
 
-  sm:gap-[150px]
+  md:gap-[150px]
   `
-// gap-20
-// xl:gap-10
 
-export const OrderList = tw.div`  
+
+  export const OrderList = tw.div`  
   w-full
-  lg:w-[400px]
   xl:w-[550px]
   
   text-white
@@ -56,10 +56,7 @@ export const OrderCard = tw.div`
   mb-6
   `
 
-export const Payment = tw.div`
-  w-[340px]  
-  sm:w-[530px]
-
+  export const Payment = tw.div`
 text-white
   
   flex
@@ -67,12 +64,15 @@ text-white
   items-center
   lg:items-start
 
-  mt-14
+  mt-6
   sm:mt-0
-
 `
 
 export const PaymentSession = tw.div`
+  w-[full]
+  h-[530px]
+
+
   flex
   flex-col
   items-center
@@ -97,9 +97,10 @@ export const PaymentMethod = tw.button`
   justify-center
   gap-4
 
-  w-[140px]
-  lg:w-[200px]
-  xl:w-[256px]
+  w-[170px]
+  sm:w-[200px]
+  lg:w-[222px]
+  xl:w-[275px]
 
   py-8
 
@@ -113,7 +114,6 @@ export const PaymentMethod = tw.button`
 
 
 export const Form = tw.form`
-  sm:w-[348px]
   flex
   flex-col
   
@@ -122,7 +122,6 @@ export const Form = tw.form`
 `
 
 export const Input = tw.input`
-  
   text-white
   bg-transparent
 
@@ -151,6 +150,8 @@ export const PaymentStatus = tw.div`
   flex-col
   items-center
   gap-9
+
+  mt-[50px]
 
   text-center
 
