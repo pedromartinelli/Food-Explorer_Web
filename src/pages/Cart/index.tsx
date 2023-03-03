@@ -14,7 +14,7 @@ import { Header, Footer, Button } from '../../components'
 
 import { exampleFoods } from '../../constants'
 
-export function MyOrder() {
+export function Cart() {
   const [paymentToggled, setPaymentToggled] = useState('pix')
   const [paymentStatus, setPaymentStatus] = useState('')
 

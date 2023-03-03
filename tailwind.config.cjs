@@ -8,6 +8,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        'order': '2px 2px 9px 2px rgba(0, 0, 0, 1);',
+      },
       colors: {
         background_900: "#000A0F",
         background_800: "#00111A",
