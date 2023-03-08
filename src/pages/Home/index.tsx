@@ -147,7 +147,6 @@ export function Home() {
                   src={food.image}
                 />
 
-
                 <div className="flex flex-col items-center">
                   <Link to={'/details'} className='hover:opacity-80 hover:scale-105 focus:opacity-80 focus:scale-105 ease-in-out duration-300'>
                     <h3 className='text-white font-poppins font-bold text-2xl flex items-center relative min-h-[64px]'>

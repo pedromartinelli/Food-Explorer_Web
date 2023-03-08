@@ -6,10 +6,14 @@ export const Container = tw.div`
   flex
   justify-center
 
-  py-12
+  py-4
+  lg:py-12
   px-10
 
   mt-auto
 
+  w-full
+  fixed
+  bottom-0
 `
 

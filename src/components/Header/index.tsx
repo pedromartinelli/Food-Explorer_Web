@@ -128,7 +128,7 @@ export function Header() {
           />
         </InputContainer>
 
-        <Link to={'/myorder'}>
+        <Link to={'/cart'}>
           <Button
             className={'w-24 h-12 text-xs lg:text-base lg:w-56'}
             iconClassName={'hidden lg:flex'}

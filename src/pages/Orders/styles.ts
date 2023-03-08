@@ -5,7 +5,7 @@ export const Container = tw.div`
   m-0
   box-border
  
-  bg-background_700
+  bg-background_900
  
   min-h-screen
   w-full
@@ -14,6 +14,8 @@ export const Container = tw.div`
   flex-col
 
   text-white
+
+
   `
 
 export const Section = tw.div`
@@ -22,13 +24,10 @@ export const Section = tw.div`
 
   xl:px-0
   xl:w-[1120px]
-  mt-8
 
   flex
   flex-col
-  justify-center
 
-  md:gap-[150px]
   `
 
 

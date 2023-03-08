@@ -11,9 +11,9 @@ export const navMenu = [
     nav: '/favorites',
   },
   {
-    title: "Meus pedidos",
+    title: "Meu pedido",
     icon: order,
-    nav: '/orders',
+    nav: '/cart',
   },
   {
     title: "Sair",
@@ -67,7 +67,6 @@ export const exampleFoods = [
   },
 ]
 
-console.log(exampleFoods.length)
 
 const pedido01 = exampleFoods.find(x => x.id === 1)
 const pedido02 = exampleFoods.find(x => x.id === 2)
@@ -77,60 +76,38 @@ const pedido04 = exampleFoods.find(x => x.id === 4)
 export const orders = [
   {
     id: 1,
-    status: 'Entregue',
-    total_price: '',
-    date:'',
+    status: 'Pendente',
+    total_price: '15900',
+    date: 'Sex 24 fevereiro 2023',
   },
   {
     id: 2,
-    status: 'Entregue',
-    total_price: '',
-    date:'',
+    status: 'Pendente',
+    total_price: '20000',
+    date: 'Sex 23 fevereiro 2023',
   },
   {
     id: 3,
-    status: 'Entregue',
-    total_price: '',
-    date:'',
+    status: 'Pendente',
+    total_price: '8000',
+    date: 'Sex 22 fevereiro 2023',
   },
   {
     id: 4,
-    status: 'Entregue',
-    total_price: '',
-    date:'',
-  }, 
-]
-
-// const teste = [orders.filter(x => x.id === 1)]
-
-// console.log(teste)
-
-export const order_enrollment = [
-  {
-    id: 1,
-    order: orders.filter(x => x.id === 1),
-    foods: exampleFoods.filter(function (x) {
-      let ids = [1, 2 ,3]
-      return ids.includes(x.id)
-    })
+    status: 'Pendente',
+    total_price: '5000',
+    date: 'Sex 21 fevereiro 2023',
   },
   {
-    id: 2,
-    order: orders.filter(x => x.id === 2),
-    foods: exampleFoods.filter(function (x) {
-      let ids = [3, 4]
-      return ids.includes(x.id)
-    })
+    id: 4,
+    status: 'Pendente',
+    total_price: '5000',
+    date: 'Sex 21 fevereiro 2023',
+  },
+  {
+    id: 4,
+    status: 'Pendente',
+    total_price: '5000',
+    date: 'Sex 21 fevereiro 2023',
   },
 ]
-
-// console.log(order_enrollment)
-// console.log(order_enrollment.filter(x => x.foods))
-
-
-// console.log(orders)
-
-
-// const testefind = orders.find(x => x.itens.find(y => y?.id === 1))
-
-// console.log(testefind)
