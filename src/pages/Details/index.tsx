@@ -4,11 +4,15 @@ import exampleFood from '../../assets/exampleFood.png'
 import alface from '../../assets/alface.svg'
 import tomate from '../../assets/tomate.svg'
 
+
 import { torradasdeParma } from '../../assets'
 
 import { Link } from 'react-router-dom'
 import { FiHeart, FiMinus, FiPlus } from 'react-icons/fi'
 import { RiArrowDropLeftLine } from 'react-icons/ri'
+
+import { Circle, CaretDown, CaretLeft } from 'phosphor-react'
+
 
 import { Container, Section, Ingredients, IngredientCard, FoodDetails } from './styles'
 
@@ -24,9 +28,9 @@ export function Details() {
           className='text-white font-poppins font-medium text-2xl self-start flex items-center ml-7 relative w-20 hover:opacity-80 hover:scale-105 focus:opacity-80 focus:scale-105 ease-in-out duration-300'
           to='/'
         >
-          <RiArrowDropLeftLine
-            className='absolute -left-11 -top-[7.9px]'
-            size={50}
+          <CaretLeft
+            className='absolute -left-8 top-[1px]'
+            size={30}
           />
           voltar
         </Link>

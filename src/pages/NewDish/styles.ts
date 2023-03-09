@@ -14,11 +14,9 @@ export const Container = tw.div`
   flex-col
 
   text-white
-
-
   `
 
-export const Section = tw.div`
+export const Main = tw.div`
   w-screen
   px-6
 
@@ -28,7 +26,18 @@ export const Section = tw.div`
   flex
   flex-col
 
-  `
+  mx-auto
+
+  my-10
+`
+
+export const Form = tw.form`
+  w-full
+  flex
+  flex-col
+  gap-8
+  mt-14
+`
 
 
 export const OrderList = tw.div`  
@@ -111,23 +120,29 @@ export const PaymentMethod = tw.button`
   border-opacity-60
 `
 
+export const InputsLine = tw.div`
+  flex 
+  flex-col
 
-export const Form = tw.form`
+  sm:flex-row
+  gap-8
+`
+
+
+export const InputContainer = tw.div`
   flex
   flex-col
-  
-  font-roboto
-  text-gray_200
+  gap-1
 `
 
 export const Input = tw.input`
+  w-full
+
   text-white
   bg-transparent
 
-  h-12
-  mt-2
-  p-2
-
+  py-4
+  px-4
   rounded-lg
   border
   
@@ -135,7 +150,7 @@ export const Input = tw.input`
   placeholder:font-roboto
   placeholder:text-gray_300
 
-  focus:outline-none
+  focus:outline-none 
   focus:ring-2
   focus:ring-white
   focus:ring-inset
@@ -143,6 +158,15 @@ export const Input = tw.input`
 
   ease-in-out duration-300
 `
+
+export const InputSpan = tw.span`
+  text-base 
+  font-roboto 
+  text-gray_200
+`
+
+
+
 export const PaymentStatus = tw.div`
   w-full
   flex
@@ -157,6 +181,9 @@ export const PaymentStatus = tw.div`
   font-roboto
   text-gray_300
   text-2xl
+`
+export const IngredientTag = tw.div`
+
 `
 
 
