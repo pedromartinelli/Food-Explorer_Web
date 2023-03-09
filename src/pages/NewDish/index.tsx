@@ -13,6 +13,7 @@ import { Container, Main, InputSpan, InputsLine, OrderList, Payment, OrderCard, 
 import { Header, Footer, Button, IngredientTag } from '../../components'
 
 export function NewDish() {
+  const [ingredients, setIngredients] = useState<string[]>([])
   const [newIngredient, setNewIngredient] = useState('')
 
   const schema = zod.object({
@@ -29,6 +30,24 @@ export function NewDish() {
     resolver: zodResolver(schema)
   });
 
+  function handleAddIngredient() {
+    const repeatedIngredient = ingredients.filter(ingredient => ingredient === newIngredient)
+
+    if (repeatedIngredient.length > 0) {
+      return alert('Não é possível adicionar ingredientes iguais.');
+    };
+
+    if (!newIngredient) {
+      return alert('Não é possível adicionar um ingrediente vazio.');
+    };
+
+    setIngredients(prevState => [...prevState, newIngredient]);
+    setNewIngredient('');
+  };
+
+  function handleRemoveIngredient(deleted: any) {
+    setIngredients(prevState => prevState.filter(ingredient => ingredient !== deleted));
+  };
 
   return (
     <Container>
@@ -51,16 +70,6 @@ export function NewDish() {
           </h1>
 
           <InputsLine className='flex flex-row'>
-            <InputContainer className='flex-1'>
-              <InputSpan>Nome</InputSpan>
-
-              <Input
-                className='py-4'
-                type='text'
-                name='title'
-                placeholder='Ex.: Salada Caesar'
-              />
-            </InputContainer>
 
             <InputContainer>
               <InputSpan className='hidden sm:flex'>Imagem do prato</InputSpan>
@@ -86,24 +95,55 @@ export function NewDish() {
 
             </InputContainer>
 
+            <InputContainer className='flex-1'>
+              <InputSpan>Nome</InputSpan>
+
+              <Input
+                className='py-4'
+                type='text'
+                name='title'
+                placeholder='Ex.: Salada Caesar'
+              />
+            </InputContainer>
           </InputsLine>
 
           <InputsLine className=''>
 
-            <div className='w-full'>
+            <InputContainer className='flex-1'>
               <InputSpan>Ingredientes</InputSpan>
 
+              <div className='border rounded-lg p-2 flex flex-row gap-2'>
+                {ingredients.map((ingredient, i) => (
+                  <IngredientTag
+                    key={String(i)}
+                    value={ingredient}
+                    onClick={() => handleRemoveIngredient(ingredient)}
+                  />
+                ))}
 
-              <IngredientTag
-                value={newIngredient}
-                placeholder='Novo ingrediente'
-                isNew={false}
-                onChange={e => setNewIngredient(e.target.value)}
-              // value={ingredients}
-              // onClick={() => handleRemoveIngredient(ingredients)} 
-              // isNew={false}                  
-              />
-            </div>
+                <IngredientTag 
+                  isNew
+                  placeholder='Novo Ingrediente'
+                  value={newIngredient}
+                  onChange={e => setNewIngredient(e.target.value)}
+                  onClick={handleAddIngredient}
+                />
+                
+                {/* <IngredientTag
+                  value={newIngredient}
+                  placeholder='Novo ingrediente'
+                  isNew={false}
+                  onChange={e => setNewIngredient(e.target.value)}
+                />
+
+                <IngredientTag
+                  value={newIngredient}
+                  placeholder='Novo ingrediente'
+                  isNew
+                  onChange={e => setNewIngredient(e.target.value)}
+                /> */}
+              </div>
+            </InputContainer>
 
             <InputContainer className=''>
               <InputSpan>Preço</InputSpan>

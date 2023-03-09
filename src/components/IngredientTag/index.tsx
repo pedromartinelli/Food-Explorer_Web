@@ -17,7 +17,7 @@ export function IngredientTag({ isNew, value, onClick, className, ...rest }: Ing
         type="text"
         value={value}
         readOnly={!isNew}
-        className={`${className} bg-transparent text-gray_300 w-[160px] px-4 rounded-xl focus:outline-none`}
+        className={`${className} bg-transparent text-gray_200 w-[160px] px-4 rounded-xl focus:outline-none`}
         // bg-background_700
         {...rest}
       />
