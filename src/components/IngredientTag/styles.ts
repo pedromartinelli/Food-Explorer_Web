@@ -4,11 +4,16 @@ export const Container = tw.div`
   flex
 
   h-[40px]
-  w-[180px]
+
+  w-[157px]
+  sm:w-[160px]
+  lg:w-[270px]
 
   relative
 
   rounded-xl
+
+  last:w-[180px]
 `
 // relative
 

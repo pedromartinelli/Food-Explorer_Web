@@ -11,7 +11,7 @@ interface IngredientTagProps extends InputHTMLAttributes<HTMLInputElement> {
 export function IngredientTag({ isNew, value, onClick, className, ...rest }: IngredientTagProps) {
   return (
     <Container
-      className={`${isNew ? 'bg-transparent border-2 border-dashed border-gray_300' : 'bg-background_700 border-none'}`}
+      className={`${isNew ? 'bg-transparent border-2 border-dashed border-gray_300' : 'bg-background_700 border-none'} `}
     >
       <input
         type="text"

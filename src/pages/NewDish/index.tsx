@@ -112,7 +112,7 @@ export function NewDish() {
             <InputContainer className='flex-1'>
               <InputSpan>Ingredientes</InputSpan>
 
-              <div className='border rounded-lg p-2 flex flex-row gap-2'>
+              <div className=' rounded-lg p-2 flex flex-row gap-3 w-full flex-wrap'>
                 {ingredients.map((ingredient, i) => (
                   <IngredientTag
                     key={String(i)}
@@ -121,27 +121,14 @@ export function NewDish() {
                   />
                 ))}
 
-                <IngredientTag 
+                <IngredientTag
                   isNew
                   placeholder='Novo Ingrediente'
                   value={newIngredient}
                   onChange={e => setNewIngredient(e.target.value)}
                   onClick={handleAddIngredient}
                 />
-                
-                {/* <IngredientTag
-                  value={newIngredient}
-                  placeholder='Novo ingrediente'
-                  isNew={false}
-                  onChange={e => setNewIngredient(e.target.value)}
-                />
 
-                <IngredientTag
-                  value={newIngredient}
-                  placeholder='Novo ingrediente'
-                  isNew
-                  onChange={e => setNewIngredient(e.target.value)}
-                /> */}
               </div>
             </InputContainer>
 
@@ -156,11 +143,23 @@ export function NewDish() {
             </InputContainer>
           </InputsLine>
 
+          <InputContainer>
+            <InputSpan>Descrição</InputSpan>
+
+            <textarea
+              name="description"
+              className='text-white bg-transparent py-2 px-3 border rounded-lg h-[172px] resize-none'
+              placeholder='Fale brevemente sobre o prato, seus ingredientes e composição.'
+            >
+
+            </textarea>
+          </InputContainer>
+
 
         </Form>
 
       </Main>
-      <Footer />
+      <Footer className={'static'}/>
     </Container>
   )
 }

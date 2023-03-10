@@ -2,9 +2,14 @@ import FooterLogo from '../../assets/footerLogo.svg'
 
 import { Container } from "./styles";
 
-export function Footer() {
+interface FooterProps {
+  className?: any;
+
+}
+
+export function Footer({className}: FooterProps) {
   return (
-    <Container>
+    <Container className={`${className}`}>
       <div className='flex flex-col gap-8 sm:flex-row w-[1120px] justify-between items-center '>
         <img
           src={FooterLogo}
