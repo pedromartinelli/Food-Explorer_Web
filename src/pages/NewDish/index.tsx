@@ -155,7 +155,6 @@ export function NewDish() {
             </textarea>
           </InputContainer>
 
-
         </Form>
 
       </Main>
