@@ -60,7 +60,6 @@ export const Input = tw.input`
   focus:ring-offset-white
 
   ease-in-out duration-300
-
 `
 
 export const ButtonTest = tw.button`

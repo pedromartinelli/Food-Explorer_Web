@@ -1,16 +1,37 @@
-import { Envelope } from 'phosphor-react'
+import { Link } from 'react-router-dom'
+
+import * as zod from 'zod';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+
 import logoImage from '../../assets/logo.svg'
 
-import { Link } from 'react-router-dom'
 import { FiMail, FiLock } from 'react-icons/fi'
 import { FcGoogle } from 'react-icons/fc'
-
+import { RiErrorWarningFill } from 'react-icons/ri';
 
 import { Container, FormDiv, Input, Form, InputContainer } from './styles'
 import { Button } from '../../components/Button'
 import { NavButton } from '../../components/NavButton'
 
 export function SignIn() {
+  const schema = zod.object({
+    email: zod.string().email({ message: 'Introduza um endereço de email válido.' }),
+    password: zod.string().min(1, { message: 'Introduza a senha de usuário.' })
+  })
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors }
+  } = useForm({
+    resolver: zodResolver(schema)
+  });
+
+  function handleSignIn(user: any) {
+    console.log(user)
+  };
+
   return (
     <Container>
       <div className='flex md:gap-x-20 lg:gap-x-52 xl:gap-x-80'>
@@ -27,39 +48,43 @@ export function SignIn() {
             Faça Login
           </h1>
 
-          <Form>
+          <Form
+            id='form'
+            onSubmit={handleSubmit((d) => handleSignIn(d))}
+          >
 
-            <InputContainer>
+            <div className='flex items-center'>
               <FiMail
                 className='absolute ml-4'
                 color='#7C7C8A'
                 size={22}
               />
               <Input
+                placeholder='E-mail'
                 type='text'
-                name='email'
-                placeholder='Email'
+                {...register('email')}
               />
-            </InputContainer>
+            </div>
+            {errors.email?.message && <p className='text-xs -mt-6 mx-2 text-[#C0433D] flex items-center gap-2'> <RiErrorWarningFill /> {errors.email?.message}</p>}
 
-            <InputContainer>
+            <div className='flex items-center'>
               <FiLock
                 className='absolute ml-4'
                 color='#7C7C8A'
                 size={22} />
               <Input
-                type='password'
-                name='password'
                 placeholder='Senha'
+                type='password'
+                {...register('password')}
               />
-            </InputContainer>
+            </div>
+            {errors.password?.message && <p className='text-xs -mt-6 mx-2 text-[#C0433D] flex items-center gap-2'> <RiErrorWarningFill /> {errors.password?.message}</p>}
+
 
             <Button
               title='Entrar'
-              icon={''}
-              className={''}
-              iconClassName={''}
             />
+
           </Form>
 
           <div className='my-12 grid grid-cols-3 items-center w-full'>
@@ -69,7 +94,7 @@ export function SignIn() {
           </div>
 
           <button
-            className='bg-white font-poppins rounded-3xl py-2 w-full flex gap-2 items-center justify-center hover:opacity-80 hover:scale-105 focus:opacity-80 focus:scale-105 ease-in-out duration-300'
+            className=' bg-white font-poppins rounded-3xl py-2 w-full flex gap-2 items-center justify-center hover:opacity-80 hover:scale-105 focus:opacity-80 focus:scale-105 ease-in-out duration-300'
           >
             <FcGoogle
               className=''

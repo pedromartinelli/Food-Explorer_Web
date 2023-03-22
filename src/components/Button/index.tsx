@@ -12,12 +12,12 @@ interface ButtonProps {
   onClick?: MouseEventHandler;
 }
 
-export function Button({ title, icon: Icon, className, iconClassName, onClick }: ButtonProps) {
+export function Button({ title, icon: Icon, className, iconClassName, onClick, ...rest }: ButtonProps) {
 
   return (
     <Container
       className={`${className}`}
-      type='button'
+      type='submit'
       onClick={onClick}
     >
       {Icon && <Icon className={`${iconClassName}`} size={25} />}
