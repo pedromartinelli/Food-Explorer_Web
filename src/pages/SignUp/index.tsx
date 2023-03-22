@@ -19,7 +19,7 @@ import { NavButton } from '../../components/NavButton'
 
 export function SignUp() {
   const navigate = useNavigate();
-  
+
   const schema = zod.object({
     name: zod.string().min(1, { message: 'Introduza um nome.' }),
     email: zod.string().email({ message: 'Introduza um endereço de email válido.' }),
@@ -39,9 +39,15 @@ export function SignUp() {
     api.post('/users', { name: user.name, email: user.email, password: user.password })
       .then(() => {
         alert('Cadastro realizado com sucesso!')
+        navigate('/')
       })
-
-    console.log(user)
+      .catch(error => {
+        if (error.response) {
+          alert(error.response.data.message)
+        } else {
+          alert('Não foi possível realizar o cadastro');
+        }
+      })
   };
 
 
