@@ -1,8 +1,11 @@
+import { useNavigate } from 'react-router-dom';
+
 import * as zod from 'zod';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 
-import { Envelope } from 'phosphor-react'
+import { api } from '../../services/api'
+
 import logoImage from '../../assets/logo.svg'
 
 import { Link } from 'react-router-dom'
@@ -15,6 +18,8 @@ import { Button } from '../../components/Button'
 import { NavButton } from '../../components/NavButton'
 
 export function SignUp() {
+  const navigate = useNavigate();
+  
   const schema = zod.object({
     name: zod.string().min(1, { message: 'Introduza um nome.' }),
     email: zod.string().email({ message: 'Introduza um endereço de email válido.' }),
@@ -30,6 +35,12 @@ export function SignUp() {
   });
 
   function handleSignUp(user: any) {
+
+    api.post('/users', { name: user.name, email: user.email, password: user.password })
+      .then(() => {
+        alert('Cadastro realizado com sucesso!')
+      })
+
     console.log(user)
   };
 
