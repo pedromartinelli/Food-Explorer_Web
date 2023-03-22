@@ -13,7 +13,7 @@ export const Container = tw.div`
   mt-auto
 
   w-full
-  fixed
   bottom-0
-`
+  `
+  // fixed
 

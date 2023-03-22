@@ -4,6 +4,8 @@ import * as zod from 'zod';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 
+import { useAuth } from '../../hooks/auth';
+
 import logoImage from '../../assets/logo.svg'
 
 import { FiMail, FiLock } from 'react-icons/fi'
@@ -28,8 +30,10 @@ export function SignIn() {
     resolver: zodResolver(schema)
   });
 
+  const { SignIn } = useAuth()
+
   function handleSignIn(user: any) {
-    console.log(user)
+    SignIn({ email: user.email, password: user.password })
   };
 
   return (
